@@ -1,6 +1,6 @@
 # Inferencia 2
 
-[Resolução de lista aula](Lista_aula.html)
+[Resolução de lista aula](Lista__comp_aula.html)
 
 # Comp 2
 
