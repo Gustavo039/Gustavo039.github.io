@@ -1,6 +1,7 @@
 # Inferencia 2
 
 [Resolução de lista aula](Lista_comp_aula.html)
+[Pacote Bootstrap](lista_bootstrap.html)
 
 # Comp 2
 
