@@ -423,7 +423,7 @@ F
 <p>Substituindo os valores amostrais, temos o seguinte valor para a estatistica de teste: <span class="math inline">\(t=7.8127\)</span></p>
 <p>Para calcular o limite inferior e superior, queremos encontrar <span class="math inline">\(\lambda_1\)</span> e <span class="math inline">\(\lambda_2\)</span> que satisfaçam:</p>
 <ul>
-<li><span class="math inline">\(P(\lambda_1&lt;t=0&lt; \lambda_2)=0.95\)</span></li>
+<li><span class="math inline">\(P(\lambda_1&lt;T&lt; \lambda_2)=0.95\)</span></li>
 </ul>
 <p>Utilizando a seguinte função:</p>
 <pre class="r"><code>df=data.frame(lower=qt(0.025,df=25),
@@ -506,7 +506,7 @@ base +
 <p>Substituindo os valores amostrais, temos o seguinte valor para a estatistica de teste: <span class="math inline">\(t=4.2579\)</span></p>
 <p>Para calcular o limite inferior e superior, queremos encontrar <span class="math inline">\(\lambda_1\)</span> e <span class="math inline">\(\lambda_2\)</span> que satisfaçam:</p>
 <ul>
-<li><span class="math inline">\(P(\lambda_1&lt;t&lt; \lambda_2)=0.95\)</span></li>
+<li><span class="math inline">\(P(\lambda_1&lt;T&lt; \lambda_2)=0.95\)</span></li>
 </ul>
 <p>Utilizando a seguinte função:</p>
 <pre class="r"><code>df=data.frame(lower=qt(0.025,df=25),
@@ -689,11 +689,11 @@ M
 <p>Assim, construindo o teste de hipotese para a variancia, com <span class="math inline">\(5\%\)</span> de significancia</p>
 <p><span class="math inline">\(H_0:\frac{\sigma_1^2}{\sigma_2^2}=1\)</span></p>
 <p><span class="math inline">\(H_1:\frac{\sigma_1^2}{\sigma_2^2}\neq 1\)</span></p>
-<p>Utilizaremos a seguinte estística de teste: <span class="math inline">\(\frac{S_1^1\sigma_2^2}{S_2^1\sigma_1^2}\sim F(m-1,n-1)\)</span>, onde <span class="math inline">\(m\)</span> é o tamanho amostral 1 e <span class="math inline">\(n\)</span> é o tamanho amostral 2</p>
+<p>Utilizaremos a seguinte estística de teste: <span class="math inline">\(F=\frac{S_1^1\sigma_2^2}{S_2^1\sigma_1^2}\sim F(m-1,n-1)\)</span>, onde <span class="math inline">\(m\)</span> é o tamanho amostral 1 e <span class="math inline">\(n\)</span> é o tamanho amostral 2</p>
 <p>Substituindo os dados amostrais, temos o seguinte valor para a estatistica de teste</p>
-<p><span class="math display">\[\frac{S_1^1\sigma_2^2}{S_2^1\sigma_1^2}=1.314338\]</span></p>
+<p><span class="math display">\[F=\frac{S_1^1\sigma_2^2}{S_2^1\sigma_1^2}=1.314338\]</span></p>
 <p>Agora, devemos encontrar os valores quantilicos <span class="math inline">\(\lambda_1\)</span> e <span class="math inline">\(\lambda_2\)</span> da distribuição f(41,49) que satisfazem:</p>
-<p><span class="math display">\[ P(\lambda_1&lt;f&lt;\lambda_2)=0.95\]</span></p>
+<p><span class="math display">\[ P(\lambda_1&lt;F&lt;\lambda_2)=0.95\]</span></p>
 <pre class="r"><code>df=data.frame(lower=qf(0.025,df1 = 41,df2= 49),
               upper=qf(0.975,df1 = 41,df2= 49))</code></pre>
 <pre class="r"><code>df %&gt;%
@@ -968,11 +968,11 @@ M
 <p>Assim, construindo o teste de hipotese para a variancia, com <span class="math inline">\(5\%\)</span> de significancia</p>
 <p><span class="math inline">\(H_0:\frac{\sigma_{fem}^2}{\sigma_{masc}^2}=1\)</span></p>
 <p><span class="math inline">\(H_1:\frac{\sigma_{fem}^2}{\sigma_{masc}^2}\neq 1\)</span></p>
-<p>Utilizaremos a seguinte estística de teste: <span class="math inline">\(\frac{S_{fem}^2\sigma_{masc}^2}{S_{masc}^2\sigma_{fem}^2}\sim F(m-1,n-1)\)</span>, onde <span class="math inline">\(m\)</span> é o tamanho amostral das notas femininas e <span class="math inline">\(n\)</span> é o tamanho amostral das notas masculinas</p>
+<p>Utilizaremos a seguinte estística de teste: <span class="math inline">\(F=\frac{S_{fem}^2\sigma_{masc}^2}{S_{masc}^2\sigma_{fem}^2}\sim F(m-1,n-1)\)</span>, onde <span class="math inline">\(m\)</span> é o tamanho amostral das notas femininas e <span class="math inline">\(n\)</span> é o tamanho amostral das notas masculinas</p>
 <p>Substituindo os dados amostrais, temos o seguinte valor para a estatistica de teste</p>
 <p><span class="math display">\[\frac{S_1^1\sigma_2^2}{S_2^1\sigma_1^2}=1.293574\]</span></p>
 <p>Agora, devemos encontrar os valores quantilicos <span class="math inline">\(\lambda_1\)</span> e <span class="math inline">\(\lambda_2\)</span> da distribuição f(16,32) que satisfazem:</p>
-<p><span class="math display">\[ P(\lambda_1&lt;f&lt;\lambda_2)=0.95\]</span></p>
+<p><span class="math display">\[ P(\lambda_1&lt;F&lt;\lambda_2)=0.95\]</span></p>
 <pre class="r"><code>df=data.frame(lower=qf(0.025,df1 = 16,df2= 32),
               upper=qf(0.975,df1 = 16,df2= 32))</code></pre>
 <pre class="r"><code>df %&gt;%
