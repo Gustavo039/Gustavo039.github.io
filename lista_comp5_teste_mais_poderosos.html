@@ -338,7 +338,7 @@ p_value
 n_10
 </td>
 <td style="text-align:right;">
-0.1716735
+0.1945790
 </td>
 <td style="text-align:right;">
 0.1085081
@@ -347,7 +347,7 @@ n_10
 FALSE
 </td>
 <td style="text-align:right;">
-0.3579182
+0.5077341
 </td>
 </tr>
 <tr>
@@ -355,16 +355,16 @@ FALSE
 n_30
 </td>
 <td style="text-align:right;">
-0.5353876
+0.4200411
 </td>
 <td style="text-align:right;">
 0.4318796
 </td>
 <td style="text-align:left;">
-FALSE
+TRUE
 </td>
 <td style="text-align:right;">
-0.2908273
+0.0374578
 </td>
 </tr>
 <tr>
@@ -372,7 +372,7 @@ FALSE
 n_50
 </td>
 <td style="text-align:right;">
-1.1589155
+1.0330402
 </td>
 <td style="text-align:right;">
 0.7792947
@@ -381,7 +381,7 @@ n_50
 FALSE
 </td>
 <td style="text-align:right;">
-0.8677291
+0.6095473
 </td>
 </tr>
 <tr>
@@ -389,7 +389,7 @@ FALSE
 n_100
 </td>
 <td style="text-align:right;">
-2.0130142
+2.1632976
 </td>
 <td style="text-align:right;">
 1.6827855
@@ -398,7 +398,7 @@ n_100
 FALSE
 </td>
 <td style="text-align:right;">
-0.5391347
+0.7962747
 </td>
 </tr>
 <tr>
@@ -406,7 +406,7 @@ FALSE
 n_500
 </td>
 <td style="text-align:right;">
-10.7892154
+9.9721284
 </td>
 <td style="text-align:right;">
 9.2759436
@@ -415,7 +415,88 @@ n_500
 FALSE
 </td>
 <td style="text-align:right;">
-0.9586431
+0.4810695
+</td>
+</tr>
+</tbody>
+</table>
+<p>Simulando cada tamanho amostral 1000 vezes e observando sua convergencia:</p>
+<pre class="r"><code>decision=function(x,n_shape){
+         return(ifelse(x&gt;qgamma(0.05,shape=n_shape,rate=50),1,0))
+             }
+j=c(10,30,50,100,500)
+
+
+k=vector()
+
+
+k=sapply(1:5,function(i){replicate(1000,rexp(j[i],50))%&gt;%
+                         apply(2,sum)%&gt;%
+                             unlist()%&gt;%
+            sapply(decision,n_shape=j[i])%&gt;%
+                      sum()/1000}
+)
+                      
+  
+  
+
+              
+    
+decision_df=data.frame(N_size=c(10,30,50,100,500),Acceptance_ratio=k)
+
+decision_df %&gt;%
+      kbl() %&gt;%
+  kable_paper(&quot;hover&quot;, full_width = F)</code></pre>
+<table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+N_size
+</th>
+<th style="text-align:right;">
+Acceptance_ratio
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.949
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+0.958
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+0.955
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+0.947
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+500
+</td>
+<td style="text-align:right;">
+0.955
 </td>
 </tr>
 </tbody>
