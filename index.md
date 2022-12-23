@@ -10,3 +10,7 @@
 # Comp 2
 
 [processo de Poisson não homogeneo](nhpp_GustavoA.html)
+
+# Previsao Walmart
+
+[Analise e previsao Walmart](walmart_forecasting_report_GUSTAVOALMEIDA.html)
